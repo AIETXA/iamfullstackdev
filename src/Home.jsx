@@ -1,4 +1,6 @@
 import {Link} from 'react-router-dom'
+
+
 const Home = ({data}) => {
   return (
     <>
@@ -7,6 +9,7 @@ const Home = ({data}) => {
       {data.map(item => (
         <li key={item._id}>
           <Link to={`/${item._id}`}>{item.title}</Link>
+          <p>Completada: {item.completed ? "Sí" : "No"}</p>
         </li>
       ))}
     </ul>

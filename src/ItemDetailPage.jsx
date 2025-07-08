@@ -1,9 +1,14 @@
-const ItemDetailPage = ({item}) => {
+import { useParams } from "react-router-dom";
 
+const ItemDetailPage = ({item}) => {
+  const { id } = useParams  
+  
+  if(!item) return <p>Tarea no encontrada</p>
+  
   return (
     <>
       <h3>{item.title}</h3>
-      <p>Compled: {`${item.completed}`}</p>
+      <p>Completada: {`${item.completed}`}</p>
     </>
  
   );
