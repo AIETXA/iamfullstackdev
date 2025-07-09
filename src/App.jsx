@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Home from './Home.jsx'
 import ItemDetailPage from "./ItemDetailPage.jsx";
+import InputCreate from "./InputCreate.jsx";
 
 
 const App = () => {
@@ -39,6 +40,10 @@ useEffect(() => {
               <Route key={item._id} path={`/${item._id}`} element={<ItemDetailPage item={item}/>} />
             ))
             }
+
+            <Route path="/create" element={<InputCreate/>} />
+
+         
           </Routes>
         }
         
