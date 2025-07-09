@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 
 const ItemDetailPage = ({item}) => {
-  const { title } = useParams  
+  const { id } = useParams  
   
   if(!item) return <p>Tarea no encontrada</p>
   

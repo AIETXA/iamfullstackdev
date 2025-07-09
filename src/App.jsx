@@ -28,6 +28,7 @@ useEffect(() => {
       <div>
         <nav>
           <Link to="/">Inicio</Link>
+          <Link to="/create">Crear</Link>
      
         </nav>
         {data === null 
@@ -35,13 +36,13 @@ useEffect(() => {
         : 
           <Routes>
             <Route path="/" element={<Home data={data} />} />
+            <Route path="/create" element={<InputCreate/>} />
            
             {data.map(item => (
               <Route key={item._id} path={`/${item._id}`} element={<ItemDetailPage item={item}/>} />
             ))
             }
 
-            <Route path="/create" element={<InputCreate/>} />
 
          
           </Routes>
